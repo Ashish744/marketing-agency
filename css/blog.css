@@ -160,15 +160,7 @@ body{
   display:flex; flex-direction:column; justify-content:flex-end; padding:18px;
 }
 
-.hl-overlay h3{ color:#fff; font-size:17px; font-weight:700; line-height:1.3; margin:0 0 12px; max-width:88%; }
-
-.hl-arrow{
-  width:32px; height:32px; border-radius:50%; border:1.5px solid rgba(255,255,255,.8);
-  display:flex; align-items:center; justify-content:center; color:#fff;
-  transition: background .2s ease, transform .2s ease;
-}
-
-.hl-card:hover .hl-arrow{ background:#fff; color:#141414; transform:translateX(3px); }
+.hl-overlay h3{ color:#fff; font-size:17px; font-weight:700; line-height:1.3; margin:0; max-width:100%; }
 
 @media (max-width:860px){
 .hl-grid{ grid-template-columns:1fr 1fr; }

@@ -185,4 +185,64 @@ h1,h2,h3,p{margin:0}
 .attn{grid-template-columns:1fr}
 }
 
+/* process and service FAQs */
+.service-process{padding:88px 24px;background:#AEE0E8;}
+
+.process-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center;}
+
+.process-image{aspect-ratio:1.05;overflow:hidden;border-radius:36px;}
+
+.process-image img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.process-kicker{margin-bottom:10px;color:#c44263;font-size:12px;font-weight:700;text-transform:uppercase;}
+
+.process-copy h2,.service-faq h2{font-size:36px;font-weight:800;line-height:1.12;}
+
+.process-intro{max-width:500px;margin-top:14px;font-size:13.5px;line-height:1.7;color:#2b2320;}
+
+.process-list{list-style:none;margin:22px 0 0;padding:0;}
+
+.process-list li{display:grid;grid-template-columns:42px 1fr;gap:12px;padding:14px 0;border-top:1px solid rgba(28,43,69,.2);}
+
+.process-list li>span{font-size:16px;font-weight:800;color:#c44263;}
+
+.process-list h3{margin:0 0 3px;font-size:15px;}
+
+.process-list p{font-size:12.5px;line-height:1.55;color:#2b2320;}
+
+.service-faq{padding:80px 24px 88px;background:#FED1D6;color:#141414;}
+
+.service-faq-gap{height:48px;background:var(--pink2);}
+
+.service-faq-wrap{max-width:860px;margin:0 auto;}
+
+.service-faq h2{margin-bottom:24px;}
+
+.service-faq-list details{border-top:1px solid rgba(20,20,20,.22);padding:17px 0;}
+
+.service-faq-list details:last-child{border-bottom:1px solid rgba(20,20,20,.22);}
+
+.service-faq-list summary{cursor:pointer;font-size:14px;font-weight:700;}
+
+.service-faq-list details p{max-width:700px;margin-top:10px;font-size:13px;line-height:1.65;color:#3a3030;}
+
+.service-faq-link{display:inline-block;margin-top:22px;border-bottom:1px solid currentColor;padding-bottom:3px;color:#141414;font-size:13px;font-weight:700;text-decoration:none;}
+
+.service-faq-link:hover{color:#c44263;}
+
+@media(max-width:860px){
+	.service-process{padding:64px 24px;}
+	.process-wrap{grid-template-columns:1fr;gap:34px;}
+	.process-image{max-height:420px;aspect-ratio:1.5;}
+	.service-faq{padding:64px 24px;}
+	.service-faq-gap{height:36px;}
+}
+
+@media(max-width:520px){
+	.process-copy h2,.service-faq h2{font-size:30px;}
+	.process-image{aspect-ratio:1.2;}
+	.service-process,.service-faq{padding:52px 20px;}
+	.service-faq-gap{height:28px;}
+}
+
 .gap-cream{height:70px;background:var(--cream)}

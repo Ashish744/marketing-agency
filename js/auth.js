@@ -55,7 +55,11 @@ document.querySelectorAll('[data-password-toggle]').forEach(button => {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail('email', 'Enter a valid email address.');
     if (pass.length < 8) return fail('pass', 'Password must be at least 8 characters.');
     if (isSignup && pass !== $('pass2').value) return fail('pass2', 'Passwords do not match.');
-    const name = isSignup ? $('name').value.trim() : email.split('@')[0];
+    if (isSignup) {
+      location.href = 'signin.html';
+      return;
+    }
+    const name = email.split('@')[0];
     localStorage.setItem('stacklySession', JSON.stringify({ role, email, name }));
     location.href = role === 'admin' ? 'dashboard-admin.html' : 'dashboard-public.html';
   }

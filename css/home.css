@@ -643,21 +643,13 @@ body{
   max-width:92%;
 }
 
-.card-arrow{
-  margin-top:22px;
-  width:34px;height:34px;
-  border-radius:50%;
-  border:1.6px solid var(--navy);
-  background:transparent;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-  color:var(--navy);
-  transition:background .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+.card-link{
+  margin-top:22px;padding:0;border:0;background:none;
+  color:var(--navy);font:600 13px 'Poppins',sans-serif;text-decoration:underline;
+  text-underline-offset:4px;cursor:pointer;transition:opacity .2s ease;
 }
 
-.card-arrow svg{width:15px;height:15px;transition:transform .35s ease;}
-
-.service-card:hover .card-arrow{background:var(--navy);color:var(--cream);transform:rotate(45deg);}
+.card-link:hover{opacity:.7;}
 
 @media (max-width:980px){
 .cards-grid{grid-template-columns:1fr 1fr;}
