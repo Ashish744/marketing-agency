@@ -7,7 +7,7 @@ html.is-preloading body{overflow:hidden;}
 #preloader{
   position:fixed;
   inset:0;
-  z-index:4000;
+  z-index:10000;
   display:flex;
   align-items:center;
   justify-content:center;

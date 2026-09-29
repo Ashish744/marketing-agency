@@ -19,7 +19,7 @@
     { page: 'contact',  href: 'contact.html',  label: 'Contact' }
   ];
 
-  var SERVICES = ['Brand Strategy', 'Social Media', 'Performance Marketing', 'SEO', 'Content', 'Creative', 'Web Design'];
+  var SERVICES = ['Brand Strategy', 'Social Media', 'Performance Marketing', 'SEO', 'Content'];
 
   var ICONS = {
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>',
@@ -74,8 +74,14 @@
             '<div class="footer-col"><h4>Services</h4>' + serviceLinks + '</div>' +
             '<div class="footer-col"><h4>Contact</h4>' +
               '<a href="404.html">hello@stackly.com</a>' +
-              '<a href="404.html">+91 XXX XXX XXXX</a>' +
+              '<a href="404.html">+91 741 586 4455</a>' +
+              '<p class="footer-address">Evolve Studio, 4th Floor, Yelenahalli, Begur,<br>Bengaluru, Karnataka - 560068</p>' +
             '</div>' +
+          '</div>' +
+          '<div class="footer-cta">' +
+            '<h4>Have a growth goal?</h4>' +
+            '<p>Tell us what you’re working toward. We’ll help you find the right next step.</p>' +
+            '<a href="404.html">Start a conversation</a>' +
           '</div>' +
         '</div>' +
         '<div class="footer-bottom">' +
