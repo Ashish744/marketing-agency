@@ -1,10 +1,31 @@
-/* Preloader — index.html only. Visible for exactly 2s, then fades and removes itself. */
+/* Shared preloader for public pages. Visible for at least 2s, then fades away. */
 (function () {
   'use strict';
   document.documentElement.classList.add('is-preloading');
 
   var pre = document.getElementById('preloader');
-  if (!pre) { document.documentElement.classList.remove('is-preloading'); return; }
+  if (!pre) {
+    pre = document.createElement('div');
+    pre.id = 'preloader';
+    pre.setAttribute('aria-hidden', 'true');
+
+    var mark = document.createElement('div');
+    mark.className = 'pl-mark';
+    var logo = document.createElement('img');
+    logo.src = 'assets/images/logo-black.webp';
+    logo.alt = '';
+    mark.appendChild(logo);
+
+    var word = document.createElement('div');
+    word.className = 'pl-word';
+    word.textContent = 'STACKLY';
+
+    var bar = document.createElement('div');
+    bar.className = 'pl-bar';
+
+    pre.append(mark, word, bar);
+    document.body.appendChild(pre);
+  }
 
   // animate the "STACKLY" letters in, one by one
   var word = pre.querySelector('.pl-word');

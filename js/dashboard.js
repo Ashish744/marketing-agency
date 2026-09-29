@@ -18,6 +18,7 @@
   );
 
   get('uname').textContent = session.name;
+  get('uemail').textContent = session.email || '';
   get('avatar').textContent = session.name.charAt(0).toUpperCase();
 
   function toggleMenu(open) {

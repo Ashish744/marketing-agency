@@ -1,5 +1,5 @@
 /* =====================================================================
-   Preloader — index.html only. Shown for a fixed 2s, then fades out.
+  Preloader — shared by public pages; dashboards do not load this stylesheet.
    ===================================================================== */
 html.is-preloading{overflow:hidden;}
 html.is-preloading body{overflow:hidden;}
