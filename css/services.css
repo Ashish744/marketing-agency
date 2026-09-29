@@ -50,7 +50,7 @@ h1,h2,h3,p{margin:0}
 .fade.in{opacity:1;transform:none}
 
 /* hero */
-.hero{max-width:1120px;margin:0 auto;padding:70px 24px 130px;display:grid;grid-template-columns:1fr 370px;gap:40px;align-items:center}
+.hero{max-width:1120px;margin:0 auto;padding:114px 24px 130px;display:grid;grid-template-columns:1fr 370px;gap:40px;align-items:center}
 
 .hero h1{font-size:clamp(32px,4.6vw,54px);font-weight:900;line-height:1.28;letter-spacing:.5px;margin-bottom:26px}
 

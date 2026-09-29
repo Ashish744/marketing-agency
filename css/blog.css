@@ -20,7 +20,7 @@ body{
 }
 
 /* ---------- Hero ---------- */
-.hero{ max-width:1000px;margin:0 auto;padding:64px 24px 10px;text-align:center; }
+.hero{ max-width:1000px;margin:0 auto;padding:108px 24px 10px;text-align:center; }
 
 .headline1{
   font-size:clamp(28px,4.6vw,44px); font-weight:900; letter-spacing:0.5px;
