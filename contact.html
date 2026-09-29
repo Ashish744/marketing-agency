@@ -29,10 +29,10 @@
   </svg>
   <div class="form-card reveal" id="contactForm">
     <div class="field" style="animation-delay:.05s;"><label for="firstName">First Name</label><input id="firstName" name="firstName" type="text" placeholder="Your first name" aria-describedby="firstNameError"><small class="field-error" id="firstNameError" aria-live="polite"></small></div>
-    <div class="field" style="animation-delay:.12s;"><label>Work Email</label><input type="email" placeholder="you@company.com"></div>
-    <div class="field" style="animation-delay:.19s;"><label>Company Name</label><input type="text" placeholder="Company"></div>
+    <div class="field" style="animation-delay:.12s;"><label for="workEmail">Work Email</label><input id="workEmail" name="email" type="email" placeholder="you@company.com" aria-describedby="workEmailError"><small class="field-error" id="workEmailError" aria-live="polite"></small></div>
+    <div class="field" style="animation-delay:.19s;"><label for="companyName">Company Name</label><input id="companyName" name="companyName" type="text" placeholder="Company" aria-describedby="companyNameError"><small class="field-error" id="companyNameError" aria-live="polite"></small></div>
     <div class="field" style="animation-delay:.26s;"><label for="phoneNumber">Phone Number</label><input id="phoneNumber" name="phoneNumber" type="tel" inputmode="numeric" placeholder="Digits only" aria-describedby="phoneNumberError"><small class="field-error" id="phoneNumberError" aria-live="polite"></small></div>
-    <div class="field" style="animation-delay:.33s;"><label>Tell us about your requirements</label><textarea rows="1" placeholder="A few details..."></textarea></div>
+    <div class="field" style="animation-delay:.33s;"><label for="requirements">Tell us about your requirements</label><textarea id="requirements" name="requirements" rows="1" placeholder="A few details..." aria-describedby="requirementsError"></textarea><small class="field-error" id="requirementsError" aria-live="polite"></small></div>
     <button class="send-btn" id="sendContact">Send</button>
   </div>
 

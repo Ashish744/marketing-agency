@@ -633,6 +633,12 @@ body{
 .team-copy{width:56%;}
 }
 
+@media (max-width:760px){
+.team-card{aspect-ratio:auto;min-height:300px;}
+.team-copy{position:relative;left:auto;top:auto;bottom:auto;width:60%;padding:24px 0 24px 6%;}
+.team-photo{height:82%;max-width:38%;object-fit:contain;object-position:bottom right;}
+}
+
 /* ================= TEXT FX (reveal + hover on every text) ================= */
 html.fx .fx-w{display:inline-block;white-space:nowrap;}
 

@@ -33,8 +33,23 @@ document.querySelectorAll('[data-password-toggle]').forEach(button => {
   if (!btn) return;
   const $ = id => document.getElementById(id);
   const isSignup = document.body.dataset.page === 'signup';
+  const namePattern = /^\p{L}+(?: \p{L}+)*$/u;
   const msg = $('formMsg');
   let role = null;
+
+  if (isSignup) {
+    $('name').addEventListener('input', event => {
+      const input = event.currentTarget;
+      const cursor = input.selectionStart;
+      const valueBeforeCursor = input.value.slice(0, cursor);
+      const sanitizedValue = input.value.replace(/[^\p{L} ]/gu, '').replace(/ {2,}/g, ' ');
+      if (sanitizedValue !== input.value) {
+        const sanitizedCursor = valueBeforeCursor.replace(/[^\p{L} ]/gu, '').replace(/ {2,}/g, ' ').length;
+        input.value = sanitizedValue;
+        input.setSelectionRange(sanitizedCursor, sanitizedCursor);
+      }
+    });
+  }
 
   document.querySelectorAll('.role-btn').forEach(b => b.addEventListener('click', () => {
     role = b.dataset.role;
@@ -51,7 +66,9 @@ document.querySelectorAll('[data-password-toggle]').forEach(button => {
   function submit() {
     const email = $('email').value.trim(), pass = $('pass').value;
     if (!role) return fail(null, 'Please choose Public or Admin first.');
-    if (isSignup && $('name').value.trim().length < 2) return fail('name', 'Enter your full name.');
+    const name = isSignup ? $('name').value.trim() : '';
+    if (isSignup && !name) return fail('name', 'Enter your full name.');
+    if (isSignup && (name.length < 2 || !namePattern.test(name))) return fail('name', 'Use letters only for your name.');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail('email', 'Enter a valid email address.');
     if (pass.length < 8) return fail('pass', 'Password must be at least 8 characters.');
     if (isSignup && pass !== $('pass2').value) return fail('pass2', 'Passwords do not match.');
@@ -59,8 +76,8 @@ document.querySelectorAll('[data-password-toggle]').forEach(button => {
       location.href = 'signin.html';
       return;
     }
-    const name = email.split('@')[0];
-    localStorage.setItem('stacklySession', JSON.stringify({ role, email, name }));
+    const accountName = email.split('@')[0];
+    localStorage.setItem('stacklySession', JSON.stringify({ role, email, name: accountName }));
     location.href = role === 'admin' ? 'dashboard-admin.html' : 'dashboard-public.html';
   }
   btn.addEventListener('click', submit);

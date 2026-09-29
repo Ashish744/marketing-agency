@@ -199,3 +199,7 @@ body{
 }
 
 .newsletter-btn:hover{ background:#141414; color:#fff; transform:translateY(-2px); }
+
+@media (max-width:560px){
+  .journal h2{font-size:clamp(18px,6vw,20px);flex-wrap:nowrap;white-space:nowrap;}
+}

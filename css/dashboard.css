@@ -69,7 +69,8 @@ th{font-size:12px;opacity:.6;font-weight:600;text-transform:uppercase}
 .svc{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
 .svc .card b{display:block;font:700 17px 'Baloo 2';margin:4px 0}
 .svc .card p{margin:0 0 10px;opacity:.7;font-size:13px}
-.ico{font-size:26px}
+.ico{width:30px;height:30px;color:var(--pink)}
+.ico svg{display:block;width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .sm{border:1.5px solid var(--navy);background:none;color:var(--navy);border-radius:8px;padding:5px 12px;font:600 12px 'Poppins';cursor:pointer}
 .sm:hover{background:var(--navy);color:#fff}
 .sm.ok{background:#1a8f4c;border-color:#1a8f4c;color:#fff}
