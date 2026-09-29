@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Stackly — Public Dashboard</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dashboard.css">
+<script src="js/dashboard.js" defer></script>
+</head>
+<body data-role="public">
+<div class="app">
+  <div class="scrim" id="scrim"></div>
+  <aside class="side" id="side">
+    <a class="logo" href="index.html"><img src="assets/images/logo-black.webp" alt="Stackly"></a>
+    <span class="tag">Public</span>
+    <nav id="menu">
+      <button data-v="Overview">Overview</button>
+      <button data-v="Projects">Projects</button>
+      <button data-v="Services">Services</button>
+      <button data-v="Reports">Reports</button>
+      <button data-v="Invoices">Invoices</button>
+      <button data-v="Messages">Messages</button>
+      <button data-v="Support">Support</button>
+      <button data-v="Profile">Profile</button>
+    </nav>
+    <button class="logout" id="logout">Log out</button>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <h1 id="title"></h1>
+      <div class="who"><span id="uname"></span><i id="avatar"></i></div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+
+<template data-dashboard-view="Overview">
+  <div class="grid">
+    <div class="card"><h3>Active projects</h3><div class="n">3</div><div class="up">+1 this month</div></div>
+    <div class="card"><h3>Messages</h3><div class="n">5</div><div class="up">2 unread</div></div>
+    <div class="card"><h3>Reports</h3><div class="n">12</div><div class="up">Updated today</div></div>
+    <div class="card"><h3>Reach</h3><div class="n">48.2k</div><div class="up">+8.4%</div></div>
+    <div class="card"><h3>Leads</h3><div class="n">236</div><div class="up">+14%</div></div>
+    <div class="card"><h3>Next invoice</h3><div class="n">₹42,000</div><div class="up">Due 5 Oct</div></div>
+  </div>
+  <div class="two stack">
+    <div class="card"><h2>Weekly reach</h2><div class="bars lb"><i style="height:40%" data-l="Mon"></i><i style="height:55%" data-l="Tue"></i><i style="height:48%" data-l="Wed"></i><i style="height:70%" data-l="Thu"></i><i style="height:62%" data-l="Fri"></i><i style="height:85%" data-l="Sat"></i><i style="height:78%" data-l="Sun"></i></div></div>
+    <div class="card"><h2>Project progress</h2><p>Brand refresh</p><div class="prog"><i style="width:80%"></i></div><p>Summer campaign</p><div class="prog"><i style="width:55%"></i></div><p>Website SEO</p><div class="prog"><i style="width:30%"></i></div></div>
+  </div>
+  <div class="two">
+    <div class="card"><h2>Upcoming</h2><ul class="tl"><li><b>Strategy call</b><small>Thu, 2 Oct · 11:00</small></li><li><b>Design review</b><small>Mon, 6 Oct · 15:30</small></li><li><b>Campaign launch</b><small>Fri, 10 Oct</small></li></ul></div>
+    <div class="card"><h2>Recent activity</h2><ul class="list"><li><span>Brand guide shared</span><span>2h</span></li><li><span>Monthly report ready</span><span>Yesterday</span></li><li><span>Invoice #211 sent</span><span>Mon</span></li><li><span>Call scheduled</span><span>Sun</span></li></ul></div>
+  </div>
+  <div class="stack"></div>
+  <div class="card"><h2>Quick stats</h2><div class="mini"><div><small>Avg. engagement</small><b>6.4%</b></div><div><small>Followers gained</small><b>+1,240</b></div><div><small>Ad clicks</small><b>9,870</b></div><div><small>Email opens</small><b>42%</b></div></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Your account manager</h2><p><b>Andrew</b> · Senior Strategist</p><p>📧 andrew@stackly.com · 📞 +91 98xxx xxxxx</p><div class="chips"><span>Replies in 2h</span><span>Mon–Fri</span><span>English / Hindi</span></div></div>
+</template>
+
+<template data-dashboard-view="Projects">
+  <div class="tools"><input data-table-search placeholder="Search projects…"></div>
+  <div class="card"><h2>My projects</h2><table><thead><tr><th>Project</th><th>Service</th><th>Progress</th><th>Due</th><th>Status</th></tr></thead><tbody>
+    <tr><td data-l="Project">Brand refresh</td><td data-l="Service">Branding</td><td data-l="Progress"><div class="prog"><i style="width:80%"></i></div></td><td data-l="Due">12 Oct</td><td data-l="Status"><span class="pill">Active</span></td></tr>
+    <tr><td data-l="Project">Summer campaign</td><td data-l="Service">Social</td><td data-l="Progress"><div class="prog"><i style="width:55%"></i></div></td><td data-l="Due">30 Oct</td><td data-l="Status"><span class="pill w">In review</span></td></tr>
+    <tr><td data-l="Project">Website SEO</td><td data-l="Service">SEO</td><td data-l="Progress"><div class="prog"><i style="width:30%"></i></div></td><td data-l="Due">15 Nov</td><td data-l="Status"><span class="pill">Active</span></td></tr>
+    <tr><td data-l="Project">Product video</td><td data-l="Service">Creative</td><td data-l="Progress"><div class="prog"><i style="width:100%"></i></div></td><td data-l="Due">Done</td><td data-l="Status"><span class="pill">Completed</span></td></tr>
+  </tbody></table></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Milestones</h2><ul class="tl"><li><b>Discovery &amp; research</b><small>Completed · 3 Sep</small></li><li><b>Concepts &amp; moodboards</b><small>Completed · 18 Sep</small></li><li><b>Design review</b><small>In progress · due 6 Oct</small></li><li><b>Final delivery</b><small>Planned · 12 Oct</small></li></ul></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Files</h2><ul class="list"><li><span>📄 Brand-guide-v2.pdf</span><span>2.4 MB</span></li><li><span>🖼 Logo-pack.zip</span><span>11 MB</span></li><li><span>📄 Campaign-brief.docx</span><span>320 KB</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Services">
+  <div class="svc">
+    <div class="card"><div class="ico">🎯</div><b>Brand Strategy</b><p>Positioning, voice and identity.</p><button class="sm" type="button" onclick="window.location.href='404.html'">Request</button></div>
+    <div class="card"><div class="ico">📱</div><b>Social Media</b><p>Content calendars and community.</p><button class="sm" type="button" onclick="window.location.href='404.html'">Request</button></div>
+    <div class="card"><div class="ico">📈</div><b>Performance Marketing</b><p>Paid ads that convert.</p><button class="sm" type="button" onclick="window.location.href='404.html'">Request</button></div>
+    <div class="card"><div class="ico">🔍</div><b>SEO</b><p>Rank higher, get found.</p><button class="sm" type="button" onclick="window.location.href='404.html'">Request</button></div>
+    <div class="card"><div class="ico">✍️</div><b>Content</b><p>Blogs, emails and copy.</p><button class="sm" type="button" onclick="window.location.href='404.html'">Request</button></div>
+    <div class="card"><div class="ico">🎨</div><b>Creative</b><p>Design, video and motion.</p><button class="sm" type="button" onclick="window.location.href='404.html'">Request</button></div>
+  </div>
+  <div class="stack"></div>
+  <div class="card"><h2>Your current plan</h2><p><b>Growth plan</b> · ₹42,000 / month</p><div class="prog"><i style="width:65%"></i></div><p style="opacity:.7">65% of monthly hours used</p><div class="chips"><span>Social Media</span><span>SEO</span><span>Content</span><span>Monthly report</span></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>How we work</h2><ul class="tl"><li><b>Brief</b><small>Tell us your goals</small></li><li><b>Plan</b><small>We share a roadmap in 2 days</small></li><li><b>Create</b><small>Weekly drafts for approval</small></li><li><b>Report</b><small>Monthly performance review</small></li></ul></div>
+</template>
+
+<template data-dashboard-view="Reports">
+  <div class="card"><h2>Reports</h2><table><thead><tr><th>Report</th><th>Period</th><th>Type</th><th>File</th></tr></thead><tbody>
+    <tr><td data-l="Report">Traffic summary</td><td data-l="Period">Sep 2026</td><td data-l="Type">Analytics</td><td data-l="File"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+    <tr><td data-l="Report">Social performance</td><td data-l="Period">Sep 2026</td><td data-l="Type">Social</td><td data-l="File"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+    <tr><td data-l="Report">SEO audit</td><td data-l="Period">Aug 2026</td><td data-l="Type">SEO</td><td data-l="File"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+    <tr><td data-l="Report">Ad spend review</td><td data-l="Period">Aug 2026</td><td data-l="Type">Ads</td><td data-l="File"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+  </tbody></table></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Leads by month</h2><div class="bars lb"><i style="height:35%" data-l="Apr"></i><i style="height:48%" data-l="May"></i><i style="height:42%" data-l="Jun"></i><i style="height:66%" data-l="Jul"></i><i style="height:74%" data-l="Aug"></i><i style="height:88%" data-l="Sep"></i></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Highlights</h2><div class="mini"><div><small>Website visits</small><b>18.4k</b></div><div><small>New leads</small><b>236</b></div><div><small>Top channel</small><b>Organic</b></div><div><small>Cost / lead</small><b>₹310</b></div></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Traffic sources</h2><ul class="list"><li><span>Organic search</span><span>46%</span></li><li><span>Social</span><span>29%</span></li><li><span>Direct</span><span>18%</span></li><li><span>Referral</span><span>7%</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Invoices">
+  <div class="grid"><div class="card"><h3>Paid this year</h3><div class="n">₹3.1L</div><div class="up">6 invoices</div></div><div class="card"><h3>Outstanding</h3><div class="n">₹42,000</div><div class="up">1 pending</div></div></div>
+  <div class="card"><h2>Invoices</h2><table><thead><tr><th>Invoice</th><th>Date</th><th>Amount</th><th>Status</th><th>PDF</th></tr></thead><tbody>
+    <tr><td data-l="Invoice">#211</td><td data-l="Date">28 Sep</td><td data-l="Amount">₹42,000</td><td data-l="Status"><span class="pill w">Pending</span></td><td data-l="PDF"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+    <tr><td data-l="Invoice">#204</td><td data-l="Date">28 Aug</td><td data-l="Amount">₹42,000</td><td data-l="Status"><span class="pill">Paid</span></td><td data-l="PDF"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+    <tr><td data-l="Invoice">#196</td><td data-l="Date">28 Jul</td><td data-l="Amount">₹38,000</td><td data-l="Status"><span class="pill">Paid</span></td><td data-l="PDF"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+    <tr><td data-l="Invoice">#188</td><td data-l="Date">28 Jun</td><td data-l="Amount">₹38,000</td><td data-l="Status"><span class="pill">Paid</span></td><td data-l="PDF"><button class="sm" type="button" onclick="window.location.href='404.html'">Download</button></td></tr>
+  </tbody></table></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Payment method</h2><p>💳 Visa ending 4242 · expires 08/28</p><button class="sm" data-complete="Updated ✓">Update card</button></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Billing details</h2><ul class="list"><li><span>Company</span><span>Your company Pvt Ltd</span></li><li><span>GSTIN</span><span>29ABCDE1234F1Z5</span></li><li><span>Billing cycle</span><span>Monthly · 28th</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Messages">
+  <div class="card"><h2>Inbox</h2><ul class="list"><li><span><b>Team Stackly</b> — Draft is ready for review</span><span>New</span></li><li><span><b>Andrew</b> — Kick-off notes attached</span><span>1d</span></li><li><span><b>Support</b> — Invoice #211 sent</span><span>3d</span></li><li><span><b>Design team</b> — Logo variations</span><span>5d</span></li></ul></div>
+  <div class="stack"></div>
+  <div class="card"><h2>New message</h2><div class="form-row"><label>Subject<input placeholder="Subject"></label><label>Message<input placeholder="Write here…"></label></div><button class="btn" data-complete="Sent ✓">Send</button></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Team</h2><ul class="list"><li><span>Andrew — Strategist</span><span>🟢 Online</span></li><li><span>Riya — Designer</span><span>🟡 Away</span></li><li><span>Support desk</span><span>🟢 Online</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Support">
+  <div class="two"><div class="card"><h2>FAQs</h2><details><summary>How do I request a new service?</summary><p>Open Services and press Request. We reply within one working day.</p></details><details><summary>Where are my invoices?</summary><p>Under Invoices you can download every PDF.</p></details><details><summary>How do I change my plan?</summary><p>Send us a message and we will update it for you.</p></details></div>
+    <div class="card"><h2>Contact support</h2><p>📧 hello@stackly.com</p><p>🕘 Mon–Fri, 9am–6pm IST</p><button class="btn" type="button" onclick="window.location.href='404.html'">Raise a ticket</button></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Help topics</h2><div class="chips"><span>Billing</span><span>Reports</span><span>Account</span><span>Campaigns</span><span>Onboarding</span><span>Integrations</span></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Your tickets</h2><table><thead><tr><th>ID</th><th>Subject</th><th>Status</th></tr></thead><tbody><tr><td data-l="ID">#41</td><td data-l="Subject">Need logo in SVG</td><td data-l="Status"><span class="pill">Resolved</span></td></tr><tr><td data-l="ID">#44</td><td data-l="Subject">Report question</td><td data-l="Status"><span class="pill w">Open</span></td></tr></tbody></table></div>
+</template>
+
+<template data-dashboard-view="Profile">
+  <div class="card"><h2>Notifications</h2><label class="tog"><span>Email me project updates</span><input type="checkbox" checked></label><label class="tog"><span>Weekly report digest</span><input type="checkbox" checked></label><label class="tog"><span>Product news</span><input type="checkbox"></label></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Security</h2><label class="tog"><span>Two-factor authentication</span><input type="checkbox"></label><label class="tog"><span>Login alerts</span><input type="checkbox" checked></label></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Recent logins</h2><ul class="list"><li><span>Bengaluru · Chrome</span><span>Today</span></li><li><span>Bengaluru · Mobile</span><span>Yesterday</span></li></ul></div>
+</template>
+</body>
+</html>

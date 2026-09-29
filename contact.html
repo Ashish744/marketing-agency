@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Stackly — Contact</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600&family=Caveat:wght@600;700&family=Bowlby+One+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/contact.css">
+<script src="js/main.js" defer></script>
+<script src="js/contact.js" defer></script>
+</head>
+<body data-page="contact">
+
+<div data-include="header"></div>
+
+<section class="hero">
+  <h1 id="heroTitle"></h1>
+  <p>Tell us a little about your project, and we'll get back to you with the right next step. No complicated process, no unnecessary back-and-forth—just a straightforward conversation about what you need.</p>
+  <div class="wire-wrap"><img src="assets/images/contact-tangled-brains.webp" alt="Tangled idea to clarity"></div>
+</section>
+
+<section class="contact-section">
+  <svg class="pink-wave" viewBox="0 0 1440 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,190 C160,40 300,10 430,90 C540,155 560,190 650,190 C740,190 780,120 900,70 C1040,10 1180,50 1440,180 L1440,700 L0,700 Z"/>
+  </svg>
+  <div class="form-card reveal" id="contactForm">
+    <div class="field" style="animation-delay:.05s;"><label for="firstName">First Name</label><input id="firstName" name="firstName" type="text" placeholder="Your first name" aria-describedby="firstNameError"><small class="field-error" id="firstNameError" aria-live="polite"></small></div>
+    <div class="field" style="animation-delay:.12s;"><label>Work Email</label><input type="email" placeholder="you@company.com"></div>
+    <div class="field" style="animation-delay:.19s;"><label>Company Name</label><input type="text" placeholder="Company"></div>
+    <div class="field" style="animation-delay:.26s;"><label for="phoneNumber">Phone Number</label><input id="phoneNumber" name="phoneNumber" type="tel" inputmode="numeric" placeholder="Digits only" aria-describedby="phoneNumberError"><small class="field-error" id="phoneNumberError" aria-live="polite"></small></div>
+    <div class="field" style="animation-delay:.33s;"><label>Tell us about your requirements</label><textarea rows="1" placeholder="A few details..."></textarea></div>
+    <button class="send-btn" id="sendContact">Send</button>
+  </div>
+
+  <div class="info-row">
+    <div class="info-item">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z"/></svg>
+      <div><b>Phone Number</b><span>1800 180 1551<br>Toll-Free</span></div>
+    </div>
+    <div class="info-item">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      <div><b>Email Address</b><span>Hello@Company.Com</span></div>
+    </div>
+    <div class="info-item">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><b>Office Hours</b><span>Monday – Friday<br>9:00 AM – 5:30 PM</span></div>
+    </div>
+    <div class="info-item">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div><b>Office Address</b><span>Stackly, Hyderabad</span></div>
+    </div>
+    <div class="map-thumb"><img src="assets/images/contact-map.webp" alt="Map"></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box reveal">
+    <h2>Bring the Questions. We'll Bring the Ideas.</h2>
+    <p>Not sure exactly what you need yet? That's completely fine. Tell us where you're stuck, what you're exploring, or what you want to change. A good conversation can often reveal the right direction before the project even begins.</p>
+    <div class="handshake-wrap"><img src="assets/images/contact-handshake.webp" alt="Handshake"></div>
+  </div>
+</section>
+
+<div data-include="footer"></div>
+
+</body>
+</html>

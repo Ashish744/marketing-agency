@@ -1,0 +1,82 @@
+/* =====================================================================
+   Preloader — index.html only. Shown for a fixed 2s, then fades out.
+   ===================================================================== */
+html.is-preloading{overflow:hidden;}
+html.is-preloading body{overflow:hidden;}
+
+#preloader{
+  position:fixed;
+  inset:0;
+  z-index:4000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:22px;
+  background:var(--cream,#FBF2E4);
+  transition:opacity .55s ease, visibility .55s ease;
+}
+#preloader.pl-hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.pl-mark{
+  width:64px;
+  height:64px;
+  position:relative;
+  animation:plPop .9s cubic-bezier(.34,1.56,.64,1) both, plFloat 1.6s ease-in-out .9s infinite;
+}
+.pl-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+@keyframes plPop{
+  0%{transform:scale(.4) rotate(-20deg);opacity:0;}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+@keyframes plFloat{
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-6px) rotate(-4deg);}
+}
+
+.pl-word{
+  display:flex;
+  font-family:'Baloo 2',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:3px;
+  color:var(--navy,#1B1C46);
+}
+.pl-word span{
+  display:inline-block;
+  opacity:0;
+  animation:plLetter .5s ease forwards;
+}
+
+.pl-bar{
+  width:150px;
+  height:4px;
+  border-radius:4px;
+  background:rgba(27,28,70,.12);
+  overflow:hidden;
+}
+.pl-bar::after{
+  content:'';
+  display:block;
+  height:100%;
+  width:100%;
+  border-radius:4px;
+  background:linear-gradient(90deg, var(--pink,#F06FA6), var(--pink-deep,#ED5C96));
+  transform:translateX(-100%);
+  animation:plFill 2s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes plLetter{to{opacity:1;}}
+@keyframes plFill{to{transform:translateX(0%);}}
+
+@media (prefers-reduced-motion:reduce){
+  .pl-mark, .pl-mark img, .pl-word span, .pl-bar::after{animation:none !important;opacity:1 !important;transform:none !important;}
+}

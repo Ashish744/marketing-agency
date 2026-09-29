@@ -1,0 +1,67 @@
+:root{
+  --cream:#F6F1E7;
+  --cream-2:#EFE8D8;
+  --navy:#1C2B45;
+  --coral:#FF5A36;
+  --line: rgba(28,43,69,0.14);
+}
+
+*{box-sizing:border-box;}
+
+html,body{margin:0;padding:0;}
+
+body{
+  background: var(--cream);
+  color:#2B2320;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+@media (max-width:860px){
+main{flex-direction:column; min-height:auto;}
+}
+
+@media (max-width:860px){
+.art-side{min-height:340px;}
+}
+
+.art-side img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+.headline span{display:inline-block;opacity:0;transform:translateY(120%);animation:letterUp .65s cubic-bezier(.2,.8,.2,1) forwards;}
+
+@keyframes letterUp{to{opacity:1;transform:translateY(0);}}
+
+@keyframes fieldIn{to{opacity:1;transform:translateY(0);}}
+
+@keyframes fadeIn{to{opacity:1;}}
+
+.google-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08);}
+
+.signin-btn:hover{background:#e94b23;transform:translateY(-2px);}
+
+.switch-line a{color:var(--coral);font-weight:700;text-decoration:none;}
+
+/* role picker + messages */
+.role-pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:2px 0 14px}
+.role-btn{border:1.5px solid var(--navy);background:#fff;border-radius:10px;padding:10px 8px;cursor:pointer;font-family:inherit;color:var(--navy);text-align:center;transition:all .2s}
+.role-btn b{display:block;font-size:15px}.role-btn small{font-size:11.5px;opacity:.7}
+.role-btn.on{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.form-msg{min-height:18px;margin:0 0 6px;font-size:13px;color:#c62828;font-weight:600}
+.field input.bad{color:#c62828}
+.field.err{border-bottom-color:#c62828}
+.password-control{display:flex;align-items:center;margin-top:6px}
+.field .password-control input{flex:1;min-width:0;margin-top:0;padding-right:8px}
+.password-toggle{width:34px;height:34px;flex:none;display:grid;place-items:center;border:0;border-radius:6px;background:transparent;color:var(--navy);cursor:pointer}
+.password-toggle:hover{background:rgba(28,43,69,.08)}
+.password-toggle:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+.password-toggle svg{width:20px;height:20px}
+.password-toggle .eye-slash{display:none}
+.password-toggle[aria-pressed="true"] .eye-open{display:none}
+.password-toggle[aria-pressed="true"] .eye-slash{display:block}
+@media(max-width:860px){main{min-height:0!important}.art-side{min-height:220px!important;max-height:260px}.form-side{min-width:0}}

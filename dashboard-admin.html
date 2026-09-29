@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Stackly — Admin Dashboard</title>
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dashboard.css">
+<script src="js/dashboard.js" defer></script>
+</head>
+<body data-role="admin">
+<div class="app">
+  <div class="scrim" id="scrim"></div>
+  <aside class="side" id="side">
+    <a class="logo" href="index.html"><img src="assets/images/logo-black.webp" alt="Stackly"></a>
+    <span class="tag">Admin</span>
+    <nav id="menu">
+      <button data-v="Overview">Overview</button>
+      <button data-v="Users">Users</button>
+      <button data-v="Projects">Projects</button>
+      <button data-v="Content">Content</button>
+      <button data-v="Tickets">Tickets</button>
+      <button data-v="Billing">Billing</button>
+      <button data-v="Analytics">Analytics</button>
+      <button data-v="Settings">Settings</button>
+    </nav>
+    <button class="logout" id="logout">Log out</button>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <h1 id="title"></h1>
+      <div class="who"><span id="uname"></span><i id="avatar"></i></div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+
+<template data-dashboard-view="Overview">
+  <div class="grid">
+    <div class="card"><h3>Total users</h3><div class="n">1,284</div><div class="up">+12% this week</div></div>
+    <div class="card"><h3>Revenue</h3><div class="n">₹8.4L</div><div class="up">+6.1%</div></div>
+    <div class="card"><h3>Open tickets</h3><div class="n">17</div><div class="up">4 urgent</div></div>
+    <div class="card"><h3>Projects</h3><div class="n">46</div><div class="up">9 due soon</div></div>
+    <div class="card"><h3>Conversion</h3><div class="n">4.8%</div><div class="up">+0.6%</div></div>
+    <div class="card"><h3>Uptime</h3><div class="n">99.98%</div><div class="up">Last 30 days</div></div>
+  </div>
+  <div class="two stack">
+    <div class="card"><h2>Monthly signups</h2><div class="bars lb"><i style="height:30%" data-l="Apr"></i><i style="height:45%" data-l="May"></i><i style="height:38%" data-l="Jun"></i><i style="height:60%" data-l="Jul"></i><i style="height:72%" data-l="Aug"></i><i style="height:90%" data-l="Sep"></i></div></div>
+    <div class="card"><h2>Revenue by service</h2><p>Branding · 78%</p><div class="prog"><i style="width:78%"></i></div><p>Social · 64%</p><div class="prog"><i style="width:64%"></i></div><p>SEO · 47%</p><div class="prog"><i style="width:47%"></i></div><p>Ads · 35%</p><div class="prog"><i style="width:35%"></i></div></div>
+  </div>
+  <div class="two"><div class="card"><h2>Latest signups</h2><table><thead><tr><th>Name</th><th>Plan</th><th>Status</th></tr></thead><tbody><tr><td data-l="Name">Diya Rao</td><td data-l="Plan">Pro</td><td data-l="Status"><span class="pill w">Pending</span></td></tr><tr><td data-l="Name">Aarav Mehta</td><td data-l="Plan">Basic</td><td data-l="Status"><span class="pill">Active</span></td></tr><tr><td data-l="Name">Neha Kulkarni</td><td data-l="Plan">Pro</td><td data-l="Status"><span class="pill">Active</span></td></tr></tbody></table></div>
+    <div class="card"><h2>Activity log</h2><ul class="tl"><li><b>New user registered</b><small>5 min ago</small></li><li><b>Invoice #204 paid</b><small>1 hour ago</small></li><li><b>Post published</b><small>3 hours ago</small></li><li><b>Ticket #88 resolved</b><small>Yesterday</small></li></ul></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Team performance</h2><div class="mini"><div><small>Tasks done</small><b>182</b></div><div><small>Avg. response</small><b>1.8h</b></div><div><small>CSAT</small><b>4.7/5</b></div><div><small>On-time</small><b>94%</b></div></div></div>
+  <div class="stack"></div>
+  <div class="two"><div class="card"><h2>Weekly traffic</h2><div class="bars lb"><i style="height:50%" data-l="Mon"></i><i style="height:62%" data-l="Tue"></i><i style="height:58%" data-l="Wed"></i><i style="height:75%" data-l="Thu"></i><i style="height:68%" data-l="Fri"></i><i style="height:88%" data-l="Sat"></i><i style="height:95%" data-l="Sun"></i></div></div>
+    <div class="card"><h2>System status</h2><ul class="list"><li><span>Website</span><span class="pill">Operational</span></li><li><span>Database</span><span class="pill">Operational</span></li><li><span>Email service</span><span class="pill w">Degraded</span></li></ul></div></div>
+</template>
+
+<template data-dashboard-view="Users">
+  <div class="tools"><input data-table-search placeholder="Search users…"></div>
+  <div class="card"><h2>Users</h2><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th>Status</th><th>Action</th></tr></thead><tbody>
+    <tr><td data-l="Name">Aarav Mehta</td><td data-l="Email">aarav@mail.com</td><td data-l="Role">Public</td><td data-l="Joined">12 Aug</td><td data-l="Status"><span class="pill">Active</span></td><td data-l="Action"><button class="sm" data-complete="Done ✓">Edit</button></td></tr>
+    <tr><td data-l="Name">Diya Rao</td><td data-l="Email">diya@mail.com</td><td data-l="Role">Public</td><td data-l="Joined">20 Sep</td><td data-l="Status"><span class="pill w">Pending</span></td><td data-l="Action"><button class="sm" data-complete="Done ✓">Approve</button></td></tr>
+    <tr><td data-l="Name">Kabir Shah</td><td data-l="Email">kabir@mail.com</td><td data-l="Role">Admin</td><td data-l="Joined">02 Jan</td><td data-l="Status"><span class="pill">Active</span></td><td data-l="Action"><button class="sm" data-complete="Done ✓">Edit</button></td></tr>
+    <tr><td data-l="Name">Meera Iyer</td><td data-l="Email">meera@mail.com</td><td data-l="Role">Public</td><td data-l="Joined">14 Jul</td><td data-l="Status"><span class="pill r">Blocked</span></td><td data-l="Action"><button class="sm" data-complete="Done ✓">Unblock</button></td></tr>
+    <tr><td data-l="Name">Neha Kulkarni</td><td data-l="Email">neha@mail.com</td><td data-l="Role">Public</td><td data-l="Joined">25 Sep</td><td data-l="Status"><span class="pill">Active</span></td><td data-l="Action"><button class="sm" data-complete="Done ✓">Edit</button></td></tr>
+  </tbody></table></div>
+  <div class="stack"></div>
+  <div class="grid"><div class="card"><h3>Active</h3><div class="n">1,102</div><div class="up">86%</div></div><div class="card"><h3>Pending</h3><div class="n">41</div><div class="up">Needs approval</div></div><div class="card"><h3>Blocked</h3><div class="n">9</div><div class="up">Review</div></div><div class="card"><h3>Admins</h3><div class="n">6</div><div class="up">All verified</div></div></div>
+  <div class="card"><h2>Signups by month</h2><div class="bars lb"><i style="height:30%" data-l="Apr"></i><i style="height:45%" data-l="May"></i><i style="height:38%" data-l="Jun"></i><i style="height:60%" data-l="Jul"></i><i style="height:72%" data-l="Aug"></i><i style="height:90%" data-l="Sep"></i></div></div>
+</template>
+
+<template data-dashboard-view="Projects">
+  <div class="card"><h2>All projects</h2><table><thead><tr><th>Project</th><th>Client</th><th>Owner</th><th>Progress</th><th>Status</th></tr></thead><tbody>
+    <tr><td data-l="Project">Brand refresh</td><td data-l="Client">Aarav Mehta</td><td data-l="Owner">Andrew</td><td data-l="Progress"><div class="prog"><i style="width:80%"></i></div></td><td data-l="Status"><span class="pill">Active</span></td></tr>
+    <tr><td data-l="Project">Summer campaign</td><td data-l="Client">Diya Rao</td><td data-l="Owner">Kabir</td><td data-l="Progress"><div class="prog"><i style="width:55%"></i></div></td><td data-l="Status"><span class="pill w">In review</span></td></tr>
+    <tr><td data-l="Project">Website SEO</td><td data-l="Client">Neha K.</td><td data-l="Owner">Team</td><td data-l="Progress"><div class="prog"><i style="width:30%"></i></div></td><td data-l="Status"><span class="pill">Active</span></td></tr>
+    <tr><td data-l="Project">Launch video</td><td data-l="Client">Meera Iyer</td><td data-l="Owner">Andrew</td><td data-l="Progress"><div class="prog"><i style="width:100%"></i></div></td><td data-l="Status"><span class="pill">Completed</span></td></tr>
+  </tbody></table></div>
+  <div class="stack"></div>
+  <div class="grid"><div class="card"><h3>Active</h3><div class="n">28</div><div class="up"></div></div><div class="card"><h3>In review</h3><div class="n">9</div><div class="up"></div></div><div class="card"><h3>Completed</h3><div class="n">187</div><div class="up">All time</div></div><div class="card"><h3>Overdue</h3><div class="n">3</div><div class="up">Action needed</div></div></div>
+  <div class="card"><h2>Team workload</h2><p>Andrew</p><div class="prog"><i style="width:85%"></i></div><p>Kabir</p><div class="prog"><i style="width:60%"></i></div><p>Riya</p><div class="prog"><i style="width:72%"></i></div><p>Team</p><div class="prog"><i style="width:40%"></i></div></div>
+</template>
+
+<template data-dashboard-view="Content">
+  <div class="tools"><button class="btn" style="margin:0" data-complete="Draft created ✓"></button></div>
+  <div class="card"><h2>Blog posts</h2><table><thead><tr><th>Title</th><th>Author</th><th>Date</th><th>Views</th><th>Status</th></tr></thead><tbody><tr><td data-l="Title">Marketing to humans</td><td data-l="Author">Andrew</td><td data-l="Date">20 Sep</td><td data-l="Views">2,410</td><td data-l="Status"><span class="pill">Published</span></td></tr><tr><td data-l="Title">The attention economy</td><td data-l="Author">Team</td><td data-l="Date">—</td><td data-l="Views">—</td><td data-l="Status"><span class="pill w">Draft</span></td></tr><tr><td data-l="Title">Brand psychology</td><td data-l="Author">Team</td><td data-l="Date">02 Sep</td><td data-l="Views">1,875</td><td data-l="Status"><span class="pill">Published</span></td></tr><tr><td data-l="Title">New rules of SEO</td><td data-l="Author">Kabir</td><td data-l="Date">—</td><td data-l="Views">—</td><td data-l="Status"><span class="pill w">Draft</span></td></tr></tbody></table></div>
+  <div class="stack"></div>
+  <div class="grid"><div class="card"><h3>Published</h3><div class="n">34</div><div class="up"></div></div><div class="card"><h3>Drafts</h3><div class="n">6</div><div class="up"></div></div><div class="card"><h3>Total views</h3><div class="n">48k</div><div class="up">+9%</div></div></div>
+  <div class="card"><h2>Content calendar</h2><ul class="tl"><li><b>Thu — SEO checklist post</b><small>Scheduled</small></li><li><b>Mon — Case study: Brand refresh</b><small>In writing</small></li><li><b>Fri — Newsletter</b><small>Planned</small></li></ul></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Media library</h2><ul class="list"><li><span>🖼 Images</span><span>186 files</span></li><li><span>🎬 Videos</span><span>12 files</span></li><li><span>📄 Documents</span><span>48 files</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Tickets">
+  <div class="card"><h2>Support tickets</h2><table><thead><tr><th>ID</th><th>Subject</th><th>User</th><th>Priority</th><th>Status</th></tr></thead><tbody><tr><td data-l="ID">#91</td><td data-l="Subject">Cannot download report</td><td data-l="User">Aarav M.</td><td data-l="Priority"><span class="pill r">High</span></td><td data-l="Status"><span class="pill w">Open</span></td></tr><tr><td data-l="ID">#90</td><td data-l="Subject">Change billing email</td><td data-l="User">Diya R.</td><td data-l="Priority"><span class="pill">Low</span></td><td data-l="Status"><span class="pill w">Open</span></td></tr><tr><td data-l="ID">#88</td><td data-l="Subject">Login issue</td><td data-l="User">Neha K.</td><td data-l="Priority"><span class="pill r">High</span></td><td data-l="Status"><span class="pill">Resolved</span></td></tr><tr><td data-l="ID">#85</td><td data-l="Subject">Plan upgrade</td><td data-l="User">Meera Iyer</td><td data-l="Priority"><span class="pill w">Medium</span></td><td data-l="Status"><span class="pill">Resolved</span></td></tr></tbody></table></div>
+  <div class="stack"></div>
+  <div class="grid"><div class="card"><h3>Open</h3><div class="n">17</div><div class="up">4 urgent</div></div><div class="card"><h3>Resolved today</h3><div class="n">9</div><div class="up"></div></div><div class="card"><h3>Avg. reply</h3><div class="n">1.8h</div><div class="up">-12%</div></div></div>
+  <div class="card"><h2>Tickets by category</h2><p>Billing</p><div class="prog"><i style="width:40%"></i></div><p>Login</p><div class="prog"><i style="width:25%"></i></div><p>Reports</p><div class="prog"><i style="width:20%"></i></div><p>Other</p><div class="prog"><i style="width:15%"></i></div></div>
+</template>
+
+<template data-dashboard-view="Billing">
+  <div class="grid"><div class="card"><h3>This month</h3><div class="n">₹8.4L</div><div class="up">+6.1%</div></div><div class="card"><h3>Pending</h3><div class="n">₹1.2L</div><div class="up">5 invoices</div></div><div class="card"><h3>Refunds</h3><div class="n">₹9,000</div><div class="up">2 this month</div></div></div>
+  <div class="two stack"><div class="card"><h2>Revenue</h2><div class="bars lb"><i style="height:48%" data-l="Apr"></i><i style="height:55%" data-l="May"></i><i style="height:52%" data-l="Jun"></i><i style="height:68%" data-l="Jul"></i><i style="height:74%" data-l="Aug"></i><i style="height:86%" data-l="Sep"></i></div></div>
+    <div class="card"><h2>Recent payments</h2><table><thead><tr><th>Invoice</th><th>Client</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td data-l="Invoice">#211</td><td data-l="Client">Aarav M.</td><td data-l="Amount">₹42,000</td><td data-l="Status"><span class="pill w">Pending</span></td></tr><tr><td data-l="Invoice">#210</td><td data-l="Client">Neha K.</td><td data-l="Amount">₹55,000</td><td data-l="Status"><span class="pill">Paid</span></td></tr><tr><td data-l="Invoice">#209</td><td data-l="Client">Diya R.</td><td data-l="Amount">₹38,000</td><td data-l="Status"><span class="pill">Paid</span></td></tr></tbody></table></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Plans</h2><table><thead><tr><th>Plan</th><th>Price</th><th>Clients</th></tr></thead><tbody><tr><td data-l="Plan">Basic</td><td data-l="Price">₹18,000</td><td data-l="Clients">410</td></tr><tr><td data-l="Plan">Growth</td><td data-l="Price">₹42,000</td><td data-l="Clients">620</td></tr><tr><td data-l="Plan">Pro</td><td data-l="Price">₹85,000</td><td data-l="Clients">254</td></tr></tbody></table></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Overdue invoices</h2><ul class="list"><li><span>#198 — Meera Iyer</span><span>₹38,000</span></li><li><span>#201 — Diya Rao</span><span>₹22,000</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Analytics">
+  <div class="two stack"><div class="card"><h2>Weekly traffic</h2><div class="bars lb"><i style="height:50%" data-l="Mon"></i><i style="height:62%" data-l="Tue"></i><i style="height:58%" data-l="Wed"></i><i style="height:75%" data-l="Thu"></i><i style="height:68%" data-l="Fri"></i><i style="height:88%" data-l="Sat"></i><i style="height:95%" data-l="Sun"></i></div></div>
+    <div class="card"><h2>Top sources</h2><ul class="list"><li><span>Organic</span><span>46%</span></li><li><span>Social</span><span>29%</span></li><li><span>Direct</span><span>18%</span></li><li><span>Referral</span><span>7%</span></li></ul></div></div>
+  <div class="card"><h2>Top pages</h2><table><thead><tr><th>Page</th><th>Views</th><th>Bounce</th></tr></thead><tbody><tr><td data-l="Page">/index</td><td data-l="Views">12,480</td><td data-l="Bounce">38%</td></tr><tr><td data-l="Page">/services</td><td data-l="Views">7,215</td><td data-l="Bounce">41%</td></tr><tr><td data-l="Page">/blog</td><td data-l="Views">5,902</td><td data-l="Bounce">35%</td></tr><tr><td data-l="Page">/contact</td><td data-l="Views">2,310</td><td data-l="Bounce">29%</td></tr></tbody></table></div>
+  <div class="stack"></div>
+  <div class="grid"><div class="card"><h3>Visitors</h3><div class="n">32.1k</div><div class="up">+11%</div></div><div class="card"><h3>Page views</h3><div class="n">96k</div><div class="up">+8%</div></div><div class="card"><h3>Avg. session</h3><div class="n">3m 42s</div><div class="up">+14s</div></div><div class="card"><h3>Bounce</h3><div class="n">37%</div><div class="up">-2%</div></div></div>
+  <div class="card"><h2>Devices</h2><p>Mobile · 62%</p><div class="prog"><i style="width:62%"></i></div><p>Desktop · 32%</p><div class="prog"><i style="width:32%"></i></div><p>Tablet · 6%</p><div class="prog"><i style="width:6%"></i></div></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Top locations</h2><ul class="list"><li><span>Bengaluru</span><span>24%</span></li><li><span>Mumbai</span><span>18%</span></li><li><span>Delhi</span><span>15%</span></li><li><span>Others</span><span>43%</span></li></ul></div>
+</template>
+
+<template data-dashboard-view="Settings">
+  <!-- <div class="card"><h2>Profile</h2><div class="form-row"><label>Full name<input data-session-value="name"></label><label>Email<input data-session-value="email"></label><label>Phone<input placeholder="+91 98765 43210"></label><label>Company<input placeholder="Your company"></label><label>City<input placeholder="Bengaluru"></label><label>New password<input type="password" placeholder="••••••••"></label></div><button class="btn" data-complete="Saved ✓">Save changes</button></div> -->
+  <div class="stack"></div>
+  <div class="card"><h2>Site settings</h2><label class="tog"><span>Allow new sign-ups</span><input type="checkbox" checked></label><label class="tog"><span>Email alerts for new tickets</span><input type="checkbox" checked></label><label class="tog"><span>Maintenance mode</span><input type="checkbox"></label><label class="tog"><span>Two-factor for admins</span><input type="checkbox" checked></label></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Roles &amp; permissions</h2><table><thead><tr><th>Role</th><th>Users</th><th>Access</th></tr></thead><tbody><tr><td data-l="Role">Super admin</td><td data-l="Users">2</td><td data-l="Access">Full</td></tr><tr><td data-l="Role">Editor</td><td data-l="Users">4</td><td data-l="Access">Content</td></tr><tr><td data-l="Role">Support</td><td data-l="Users">6</td><td data-l="Access">Tickets</td></tr></tbody></table></div>
+  <div class="stack"></div>
+  <div class="card"><h2>Integrations</h2><ul class="list"><li><span>Google Analytics</span><span class="pill">Connected</span></li><li><span>Razorpay</span><span class="pill">Connected</span></li><li><span>Mailchimp</span><span class="pill w">Not linked</span></li></ul></div>
+</template>
+</body>
+</html>
